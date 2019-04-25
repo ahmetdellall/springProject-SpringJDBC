@@ -1,0 +1,20 @@
+package com.spring.Product;
+
+import java.util.Date;
+
+public class Product {
+
+	private String productId;
+	
+	private String name;
+	
+	private double price;
+	
+	private Date addTime;
+	
+	private int  avaible;
+	
+	
+	
+	
+}

@@ -1,0 +1,5 @@
+package com.spring.Repository;
+
+public interface productRepository {
+
+}

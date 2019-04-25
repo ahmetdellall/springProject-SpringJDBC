@@ -1,0 +1,28 @@
+package com.spring.ProductRepositoryImplTest;
+
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.spring.Product.Product;
+import com.spring.Repository.productRepository;
+import com.spring.productRepositoryImpl.productRepositoryImpl;
+
+public class productRepositorySaveTest {
+
+	public static void main(String[] args) {
+		ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+				"applicationContext.xml");
+
+		productRepository productRepository = applicationContext.getBean("productRepositoryImpl",
+				productRepositoryImpl.class);
+
+		Product product = new Product(100, "IPHONE", 5200, new Date(), 5);
+
+		productRepository.save(product);
+
+		applicationContext.close();
+	}
+}

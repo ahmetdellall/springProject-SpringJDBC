@@ -1,0 +1,37 @@
+package com.spring.ProductRepositoryImplTest;
+
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.spring.Product.Product;
+import com.spring.Repository.productRepository;
+import com.spring.productRepositoryImpl.productRepositoryImpl;
+
+public class productRepositoryBatchUpdateImplTest {
+
+	public static void main(String[] args) {
+		
+		ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+				"applicationContext.xml");
+
+		productRepository productRepository = applicationContext.getBean("productRepositoryImpl",
+				productRepositoryImpl.class);
+
+		Product product = new Product(105,  "IPHONE 5s", 5200, new Date(), 5);
+		Product product2 = new Product(101, "SAMSUNG", 5673, new Date(), 2);
+		Product product3 = new Product(102, "HUWEAİ", 2424, new Date(), 3);
+		Product product4 = new Product(103, "NOKIA", 6789, new Date(), 4);
+		Product product5 = new Product(104, "SIEMENS", 3246, new Date(), 1);
+
+		List<Product> products =Arrays.asList(product,product2,product3,product4,product5);
+		
+		productRepository.saveBatch(products);
+
+		applicationContext.close();
+	
+	}
+}

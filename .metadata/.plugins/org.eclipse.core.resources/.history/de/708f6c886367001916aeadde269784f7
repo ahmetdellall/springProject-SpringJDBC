@@ -1,0 +1,81 @@
+package com.spring.productRepositoryImpl;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import com.spring.Product.Product;
+import com.spring.Repository.productRepository;
+
+@Repository
+public class productRepositoryImpl implements productRepository{
+
+	JdbcTemplate jdbcTemplate;
+	
+	public boolean createProductTable() {
+		
+		String sqlQuery = "CREATE TABLE product(productId INT NOT NULL, name VARCHAR(20) , price DOUBLE , avaible INT , addTime DATETIME , PRIMARY KEY(productId) )";
+		
+		try {
+			jdbcTemplate.execute(sqlQuery);
+			
+		} catch (RuntimeException e) {
+			System.out.println("HATA :" + e);
+			return false;
+		}
+		
+		return true;
+		
+	}
+
+	public boolean save(Product product) {
+	   
+			String sqlQuery = "INSERT INTO product(productId,name,price,avaible,addTime) VALUES (?,?,?,?,?)";
+		try {
+			Object objectject
+			jdbcTemplate.update(sqlQuery, args);
+			
+		} catch (RuntimeException e) {
+			System.out.println("HATA :" + e);
+			return false;
+		}
+		return true;
+	}
+
+	public boolean saveBatch(List<Product> product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Product listById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Product> findProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean update(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+	@Autowired
+	public void dataSource(DataSource dataSource) {
+		 this.jdbcTemplate = new JdbcTemplate(dataSource);
+		
+	}
+}

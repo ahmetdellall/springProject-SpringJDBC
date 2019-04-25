@@ -1,0 +1,12 @@
+INDEX VERSION 1.131+C:\Users\Artista\Desktop\springProject&SpringJDBC\.metadata\.plugins\org.eclipse.jdt.core
+1932805600.index
+601828639.index
+1569503205.index
+999828450.index
+2894128763.index
+503681499.index
+4195633960.index
+2971701134.index
+3620321962.index
+3181040116.index
+2575476912.index

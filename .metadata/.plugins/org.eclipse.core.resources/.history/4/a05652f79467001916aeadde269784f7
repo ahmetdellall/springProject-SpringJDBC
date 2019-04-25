@@ -1,0 +1,5 @@
+package com.spring.rowmapper;
+
+public class productRowMapper {
+
+}

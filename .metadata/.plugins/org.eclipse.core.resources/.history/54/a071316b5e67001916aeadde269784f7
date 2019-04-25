@@ -1,0 +1,58 @@
+package com.spring.productRepositoryImpl;
+
+import java.util.List;
+
+import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
+
+import com.spring.Product.Product;
+import com.spring.Repository.productRepository;
+
+public class productRepositoryImpl implements productRepository{
+
+	JdbcTemplate jdbcTemplate;
+	public boolean createProductTable() {
+		
+		
+		
+		return false;
+	}
+
+	public boolean save(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean saveBatch(List<Product> product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public Product listById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public List<Product> findProducts() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public boolean update(Product product) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	public boolean delete(int id) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	
+	
+	public void dataSource(DataSource dataSource) {
+		 this.jdbcTemplate = new JdbcTemplate(dataSource);
+		
+	}
+}

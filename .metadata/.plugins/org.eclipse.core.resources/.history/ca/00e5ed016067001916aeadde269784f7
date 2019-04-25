@@ -1,0 +1,17 @@
+package com.spring.ProductRepositoryImplTest;
+
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.spring.Repository.productRepository;
+import com.spring.productRepositoryImpl.productRepositoryImpl;
+
+public class productRepositoryImpCreateTable {
+
+	public static void main(String[] args) {
+		
+		ConfigurableApplicationContext applicationContext = new ClassPathXmlApplicationContext("applictaionContext.xml");
+		
+		productRepository productRepository =applicationContext.getBean("productRepositoryImpl", productRepositoryImpl.class);
+	}
+}
